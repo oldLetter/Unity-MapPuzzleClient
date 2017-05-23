@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Table>
+  <Row>
+   <ID>1</ID>
+   <X>-2.93</X>
+   <Y>1.42</Y>
+   <name>新疆</name>
+   <pieceName>xj</pieceName>
+  </Row>
+  <Row>
+   <ID>2</ID>
+   <X>-2.51</X>
+   <Y>-0.92</Y>
+   <name>西藏</name>
+   <pieceName>xz</pieceName>
+  </Row>
+  <Row>
+   <ID>3</ID>
+   <X>-1.11</X>
+   <Y>-0.26</Y>
+   <name>青海</name>
+   <pieceName>qh</pieceName>
+  </Row>
+  <Row>
+   <ID>4</ID>
+   <X>-0.18</X>
+   <Y>0.2</Y>
+   <name>甘肃</name>
+   <pieceName>gs</pieceName>
+  </Row>
+</Table>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{CFA45EF2-E5CD-522E-50FA-D114A6A00114}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_5_3;UNITY_5_5;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VIDEO;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Foundation\Extensions\DictionaryExtension.cs" />
+     <Compile Include="Assets\Foundation\Extensions\TransformExtension.cs" />
+     <Compile Include="Assets\Foundation\GameRoot.cs" />
+     <Compile Include="Assets\Foundation\GetXML.cs" />
+     <Compile Include="Assets\Foundation\ListRandom.cs" />
+     <Compile Include="Assets\Foundation\Localization\Localization.cs" />
+     <Compile Include="Assets\Foundation\Localization\LocalizedText.cs" />
+     <Compile Include="Assets\Foundation\Loom.cs" />
+     <Compile Include="Assets\Foundation\Net\Coder.cs" />
+     <Compile Include="Assets\Foundation\Net\DataAssign.cs" />
+     <Compile Include="Assets\Foundation\Net\HttpClient.cs" />
+     <Compile Include="Assets\Foundation\Net\ReqDataID.cs" />
+     <Compile Include="Assets\Foundation\Net\RespDataID.cs" />
+     <Compile Include="Assets\Foundation\SimpleJSON.cs" />
+     <Compile Include="Assets\Foundation\Singleton.cs" />
+     <Compile Include="Assets\Foundation\Timer.cs" />
+     <Compile Include="Assets\Foundation\UIBase\AnimateView.cs" />
+     <Compile Include="Assets\Foundation\UIBase\BaseContext.cs" />
+     <Compile Include="Assets\Foundation\UIBase\BaseView.cs" />
+     <Compile Include="Assets\Foundation\UIBase\ContextManager.cs" />
+     <Compile Include="Assets\Foundation\UIBase\UIManager.cs" />
+     <Compile Include="Assets\Foundation\UIBase\UIType.cs" />
+     <Compile Include="Assets\Foundation\UIComponent\GridScroller.cs" />
+     <Compile Include="Assets\Foundation\UIEffect\BlendColor.cs" />
+     <Compile Include="Assets\Foundation\UIEffect\GradientColor.cs" />
+     <Compile Include="Assets\Script\AlonePieceControl.cs" />
+     <Compile Include="Assets\Script\GameManager.cs" />
+     <Compile Include="Assets\Script\GameView.cs" />
+     <Compile Include="Assets\Script\LevelBtItem.cs" />
+     <Compile Include="Assets\Script\LoadView.cs" />
+     <Compile Include="Assets\Script\LoginView.cs" />
+     <Compile Include="Assets\Script\MainPlay.cs" />
+     <Compile Include="Assets\Script\MainView.cs" />
+     <Compile Include="Assets\Script\StartView.cs" />
+     <Compile Include="Assets\Script\UserInfo.cs" />
+     <None Include="Assets\StreamingAssets\china.xml" />
+     <None Include="Assets\StreamingAssets\SouthAmerica.xml" />
+     <None Include="Assets\StreamingAssets\ChinaPieceLocation.xml" />
+     <None Include="Assets\Resources\Localization\English.json.txt" />
+     <None Include="Assets\StreamingAssets\Australia.xml" />
+     <None Include="Assets\Resources\Localization\Chinese.json.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PlaymodeTestsRunner">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="Excel">
+ <HintPath>E:/Programming/unity/MapPuzzle/Assets/DLL/Excel.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>E:/Programming/unity/MapPuzzle/Assets/DLL/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>E:/Programming/unity/MapPuzzle/Assets/DLL/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="protobuf-net">
+ <HintPath>E:/Programming/unity/MapPuzzle/Assets/DLL/protobuf-net.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>E:/Programming/unity/MapPuzzle/Assets/DLL/System.Data.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

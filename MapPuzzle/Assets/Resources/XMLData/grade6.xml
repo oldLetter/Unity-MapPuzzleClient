@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Table>
+  <Row>
+   <id>1</id>
+   <title>下列各幅地图中，比例尺最小的是</title>
+   <A>1：15000 </A>
+   <B>1：3000000</B>
+   <C>1：15000000</C>
+   <D>1：30000000 </D>
+   <right>D</right>
+  </Row>
+  <Row>
+   <id>2</id>
+   <title>野外旅行是学习地理的好方法。下列物品中，夏季去新疆旅游时不需要带的是</title>
+   <A>地图</A>
+   <B>雨衣</B>
+   <C>指南针</C>
+   <D>相机</D>
+   <right>B</right>
+  </Row>
+  <Row>
+   <id>3</id>
+   <title>下列学习地理的方法中，不科学的是</title>
+   <A>作好地理听课笔记</A>
+   <B>多看地图，善于总结 </B>
+   <C>只要背记地理知识点就可以了</C>
+   <D>在理解的基础上记忆 </D>
+   <right>C</right>
+  </Row>
+  <Row>
+   <id>4</id>
+   <title>人口的急剧增长给人类带来的影响是</title>
+   <A>劳动力充足，促进社会经济发展</A>
+   <B>人口的急剧增长给人类带来的影响是</B>
+   <C>多子多福，生活幸福美满</C>
+   <D>城市人口快速增长，人们的生活水平提高</D>
+   <right>B</right>
+  </Row>
+  <Row>
+   <id>5</id>
+   <title>划分人种的重要标志是</title>
+   <A>眼色</A>
+   <B>肤色</B>
+   <C>脸型</C>
+   <D>毛发</D>
+   <right>B</right>
+  </Row>
+  <Row>
+   <id>6</id>
+   <title>世界上使用人数最多的语言是</title>
+   <A>英语</A>
+   <B>德语</B>
+   <C>阿拉伯语</C>
+   <D>汉语</D>
+   <right>D</right>
+  </Row>
+  <Row>
+   <id>7</id>
+   <title>下列论述属于白种人的是</title>
+   <A>鼻梁高，嘴唇厚</A>
+   <B>肤色眼色发色都较浅</B>
+   <C>嘴唇较厚，体毛较少</C>
+   <D>面庞扁平，体毛中等</D>
+   <right>B</right>
+  </Row>
+  <Row>
+   <id>8</id>
+   <title>工农业比较发达，聚落分布比较密集的地区是</title>
+   <A>高山地区</A>
+   <B>平原地区</B>
+   <C>高原地区</C>
+   <D>荒漠地区</D>
+   <right>B</right>
+  </Row>
+  <Row>
+   <id>9</id>
+   <title>下列说法中表示天气的是</title>
+   <A>夏季高温多雨</A>
+   <B>赤道终年炎热</B>
+   <C>明天小雨夹雪</C>
+   <D>冬季寒冷干燥</D>
+   <right>C</right>
+  </Row>
+  <Row>
+   <id>10</id>
+   <title>世界上领土居前三位的国家由大到小依次是</title>
+   <A>加拿大 俄罗斯 中国              </A>
+   <B>俄罗斯 中国 美国</B>
+   <C>俄罗斯 加拿大 中国</C>
+   <D>中国 美国 巴西 </D>
+   <right>C</right>
+  </Row>
+</Table>
