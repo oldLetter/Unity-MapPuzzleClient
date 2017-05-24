@@ -6,6 +6,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [ProtoContract]
+public class InitDataResp
+{
+    [ProtoMember(1)]
+    public UserInfo userinfo;
+    [ProtoMember(2)]
+    public PapersScoreResp screlist;
+    public InitDataResp()
+    {
+        userinfo = new UserInfo();
+        screlist = new PapersScoreResp();
+    }
+}
+[ProtoContract]
 public class LoginReq
 {
     [ProtoMember(1)]
@@ -100,7 +113,8 @@ public class LoginView:AnimateView
                 {
                     if (resp.result == LoginResp.LOGIN_SUCCESS)
                     {
-                        getUserInfo();
+                        //getUserInfo();
+                        initData();
                         PlayerPrefs.SetString("acount", acount);
                     }
                     else if (resp.result == LoginResp.ACOUNT_INEXISTENCE)
@@ -169,6 +183,13 @@ public class LoginView:AnimateView
         UserInfoReq req = new UserInfoReq();
         req.acount = acount;
         HttpClient.getInstnce().UpdateUserInfo<UserInfoReq>(req, "UserController,returnUsreInfo", () =>
+        {
+            Singleton<ContextManager>.Instance.Push(new MainContext());
+        });
+    }
+    public void initData()
+    {
+        HttpClient.getInstnce().initData(() =>
         {
             Singleton<ContextManager>.Instance.Push(new MainContext());
         });

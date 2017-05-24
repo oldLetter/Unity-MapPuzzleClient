@@ -16,6 +16,7 @@
 	"level_index":"第{0}关",
 	"grade":"总分数:",
 	"usetime":"总用时:",
+	"max_grade":"最高分:",
 	"home_page":"主页",
 	"again_play":"重玩",
 	"next_level":"下一关",
@@ -28,4 +29,6 @@
 	"next_question":"下一题",
 	"right_answer":"正确答案:{0}",
 	"return":"返回",
+	"net_paper":"网络试题",
+	"location_paper":"本地试题",
 }

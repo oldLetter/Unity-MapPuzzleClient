@@ -3,11 +3,16 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Threading;
+using ProtoBuf;
+[ProtoContract]
+public class DefaultRequest
+{
 
+}
 public class HttpClient : MonoBehaviour
 {
-    private const string IP = "115.159.62.67";
-    //private const string IP = "localhost";
+    //private const string IP = "115.159.62.67";
+    private const string IP = "localhost";
     private const int PORT = 8844;
 
     static private TcpClient client = new TcpClient();
@@ -24,7 +29,9 @@ public class HttpClient : MonoBehaviour
 
     public GameObject loadingObj;
     //玩家数据
-    private UserInfo userInfo;
+    public UserInfo userInfo;
+    public PapersScoreResp scorelist;
+
     public UserInfo UserInfo
     {
         get{return userInfo;}
@@ -48,6 +55,16 @@ public class HttpClient : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         instance = this;
         loadingObj.SetActive(false);
+    }
+    public void initData(Action fnish)
+    {
+        DefaultRequest req = new DefaultRequest();
+        ReadSend<DefaultRequest, InitDataResp>(req, "UserController,initData", resp =>
+          {
+              userInfo = resp.userinfo;
+              scorelist = resp.screlist;
+              fnish();
+          }, null);
     }
     public void UpdateUserInfo<reqT>(reqT req,string url,Action onFnish=null)
     {
@@ -133,7 +150,7 @@ public class HttpClient : MonoBehaviour
             int numberOfBytesRead = 0;
             if (client.GetStream().CanRead)
             {
-                byte[] recieveData = new byte[1024];
+                byte[] recieveData = new byte[1024*3];
                 do
                 {
                     numberOfBytesRead = client.GetStream().Read(recieveData, 0, recieveData.Length);
@@ -165,7 +182,6 @@ public class HttpClient : MonoBehaviour
             System.Array.Copy(recieveData, lenByte, 4);
             //System.Array.ConstrainedCopy(recieveData, 4, idByte, 0, 4);
             len = Coder.BytesToInt(lenByte, 0);
-            //id = Coder.BytesToInt(idByte, 0);
             isHead = false;
         }
         //读取消息体内容
@@ -188,24 +204,6 @@ public class HttpClient : MonoBehaviour
         }
     }
 
-    //public void dataAssigin(byte[] msg, int id)
-    //{
-    //    if (id == RespDataID.LoginResp)
-    //    {
-    //        LoginResp msgResp = Coder.DeSerialize<LoginResp>(msg, id);
-    //        DataAssign.getInstance().Loginresp(msgResp);
-    //    }
-    //    else if (id == RespDataID.RegistResp)
-    //    {
-    //        Action<RegistResp> call = DataAssign.getInstance().Registresp;
-    //        RegistResp msgResp = Coder.DeSerialize<RegistResp>(msg, id);
-    //        call(msgResp);
-    //    }
-    //    else if (id == RespDataID.UserInfoResp)
-    //    {
-    //        UserInfo = Coder.DeSerialize<UserInfo>(msg, id);
-    //    }
-    //}
     void OnApplicationQuit()
     {
         client.Close();
