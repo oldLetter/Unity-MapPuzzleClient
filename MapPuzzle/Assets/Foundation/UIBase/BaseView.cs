@@ -25,7 +25,7 @@ public abstract class BaseView : MonoBehaviour
         foreach (var item in buttons)
         {
             Button btn = item;
-            if (btn.tag != "Item")
+            if (btn.tag == "Untagged")
             {
                 btn.onClick.AddListener(delegate ()
                 {

@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using ProtoBuf;
 public class MainContext : BaseContext
 {
     public MainContext() : base(UIType.MainView)
     {
 
     }
+}
+[ProtoContract]
+public class LogoutResp
+{
+    [ProtoMember(1)]
+    public bool state;
 }
 public class MainView : AnimateView
 {
@@ -18,15 +24,19 @@ public class MainView : AnimateView
     private GameObject diffcultObj;
     [SerializeField]
     private GameObject setObj;
+    public GameObject levelDetailObj;
     public Toggle msopen;
     public Toggle msclose;
     public Toggle seopen;
     public Toggle seclose;
     public GameObject musicVolumObj;
+    public Text titletx;
+    public Text infotx;
 
     private List<LevelBtItem> btItems = new List<LevelBtItem>();
     private int chooseLevel;
     private GameObject earth;
+    private string leveldetailxml = "LevelDetail";
     public void Awake()
     {
         earth = GameObject.Instantiate(Resources.Load<GameObject>("Model/Earth")) as GameObject;
@@ -54,11 +64,13 @@ public class MainView : AnimateView
         for (int i = 0; i < bts.Count; i++)
         {
             LevelBtItem btitem = bts[i].gameObject.GetComponent<LevelBtItem>();
-            btitem.Initialize((i + 1).ToString());
+            btitem.Initialize((i + 1).ToString(),i);
             btItems.Add(btitem);
         }
         for (int i = 0; i < HttpClient.getInstnce().UserInfo.currentLevel; i++)
         {
+            btItems[i].onShortPress = LevelShortPress;
+            btItems[i].onLongPress = LevelLongPress;
             btItems[i].ChangeState();
         }
     }
@@ -73,29 +85,23 @@ public class MainView : AnimateView
         base.OnExit(context);
         earth.SetActive(false);
     }
-    public void firstLevelBtClick(GameObject sender)
-    {
-        chooseLevel = 1;
-        diffcultObj.SetActive(true);
-    }
-    public void secondLevelBtClick(GameObject sender)
-    {
-        chooseLevel = 2;
-        diffcultObj.SetActive(true);
-    }
-    public void thirdLevelBtClick(GameObject sender)
-    {
-        chooseLevel = 3;
-        diffcultObj.SetActive(true);
-    }
+
     public void answerBtClick(GameObject sender)
     {
         Singleton<ContextManager>.Instance.Push(new AnswerMainContext());
     }
     public void logoutBtClick(GameObject sender)
     {
-        HttpClient.getInstnce().UserInfo = null;
-        Singleton<ContextManager>.Instance.Pop();
+        DefaultRequest req = new DefaultRequest();
+        HttpClient.getInstnce().ReadSend<DefaultRequest, LogoutResp>(req, "UserController,Logout", resp =>
+          {
+              if (resp.state)
+              {
+                  HttpClient.getInstnce().UserInfo = null;
+                  HttpCore.instance.isLogin = true;
+                  Singleton<ContextManager>.Instance.Pop();
+              }
+          }, null);
     }
     public void closeBtClick(GameObject sender)
     {
@@ -118,6 +124,24 @@ public class MainView : AnimateView
     public void setcloseBtClick(GameObject sender)
     {
         setObj.SetActive(false);
+    }
+    public void LevelLongPress(object obj)
+    {
+        int id = (int)obj;
+        List<string[]> strList = GetXML.getInstance().LoadData(leveldetailxml);
+        levelDetailObj.SetActive(true);
+        titletx.text = strList[id][1].ToString();
+        infotx.text = strList[id][2].ToString();
+    }
+    public void LevelShortPress(object obj)
+    {
+        int id = (int)obj;
+        chooseLevel = id + 1;
+        diffcultObj.SetActive(true);
+    }
+    public void levelinfocloseBtClick(GameObject sender)
+    {
+        levelDetailObj.SetActive(false);
     }
     public void msopenTgClick(bool ison)
     {

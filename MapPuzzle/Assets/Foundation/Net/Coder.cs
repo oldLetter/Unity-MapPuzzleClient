@@ -40,18 +40,12 @@ public static class Coder  {
                 ms.Position = 0;
                 //将流中的内容读取到二进制数组中
                 ms.Read(result, 0, result.Length);
-                using (var fs = File.Create(Application.dataPath + "/userinfo.bin"))
-                {
-                    //使用Protobuf序列化文件  
-                    Serializer.Serialize<T>(fs, t);
-                }
                 byte[] urlByt = System.Text.Encoding.Default.GetBytes(url);
                 byte[] req = new byte[8 +urlByt.Length+ result.Length];
                 Coder.IntToBytes(result.Length + urlByt.Length+4).CopyTo(req, 0);
                 Coder.IntToBytes(urlByt.Length).CopyTo(req, 4);
                 urlByt.CopyTo(req, 8);
                 result.CopyTo(req, 8+urlByt.Length);
-
                 return req;
             }
         }

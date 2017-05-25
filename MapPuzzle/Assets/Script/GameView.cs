@@ -142,7 +142,7 @@ public class GameView : AnimateView {
         HintReq req = new HintReq();
         req.acount = HttpClient.getInstnce().UserInfo.acount;
         req.hintcount = hintcount;
-        HttpClient.getInstnce().UpdateUserInfo<HintReq>(req, "UserController,presentHintCount");
+        HttpClient.getInstnce().UpdateUserInfo<HintReq>(req, "GameController,updateHintCount");
     }
     public void backBtClick(GameObject sender)
     {

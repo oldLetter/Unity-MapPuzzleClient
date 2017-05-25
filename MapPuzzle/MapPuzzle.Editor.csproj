@@ -145,6 +145,7 @@
     <None Include="Assets\Resources\Localization\Chinese.json.txt" />
     <None Include="Assets\Resources\XMLData\Australia.xml" />
     <None Include="Assets\Resources\XMLData\ChinaPieceLocation.xml" />
+    <None Include="Assets\Resources\XMLData\LevelDetail.xml" />
     <None Include="Assets\Resources\XMLData\PaperList.xml" />
     <None Include="Assets\Resources\XMLData\SouthAmerica.xml" />
     <None Include="Assets\Resources\XMLData\china.xml" />

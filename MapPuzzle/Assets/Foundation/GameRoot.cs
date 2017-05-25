@@ -8,7 +8,8 @@ public class GameRoot : MonoBehaviour {
     private bool backDown = false;
        public void Start()
        {
-        HttpClient.getInstnce().startConnct();
+        //HttpClient.getInstnce().startConnct();
+        HttpCore.instance.startConnct();
         Begin();
         currenttime = Time.time;        
     }

@@ -36,6 +36,7 @@ public class LoginResp
     public static int ACOUNT_INEXISTENCE = 0;
     public static int PWD_ERROR = 1;
     public static int LOGIN_SUCCESS = 2;
+    public static int USER_ISLOGIN = 3;
 
     [ProtoMember(1)]
     public int result;
@@ -113,9 +114,9 @@ public class LoginView:AnimateView
                 {
                     if (resp.result == LoginResp.LOGIN_SUCCESS)
                     {
-                        //getUserInfo();
-                        initData();
                         PlayerPrefs.SetString("acount", acount);
+                        HttpCore.instance.currentAcount = acount;
+                        initData();
                     }
                     else if (resp.result == LoginResp.ACOUNT_INEXISTENCE)
                     {
@@ -124,6 +125,10 @@ public class LoginView:AnimateView
                     else if (resp.result == LoginResp.PWD_ERROR)
                     {
                         hintText.text = Singleton<Localization>.Instance.GetText("pwd_error");
+                    }
+                    else if(resp.result==LoginResp.USER_ISLOGIN)
+                    {
+                        hintText.text = Singleton<Localization>.Instance.GetText("acount_islogin");
                     }
                 }, null);
             }
@@ -158,6 +163,7 @@ public class LoginView:AnimateView
                     else if (resp.result == RegistResp.REGIST_SUCCESS)
                     {
                         PlayerPrefs.SetString("acount", acount);
+                        HttpClient.getInstnce().currentAcount = acount;
                         getUserInfo();
                     }
                 }, null);
@@ -191,6 +197,7 @@ public class LoginView:AnimateView
     {
         HttpClient.getInstnce().initData(() =>
         {
+            HttpCore.instance.isLogin = false;
             Singleton<ContextManager>.Instance.Push(new MainContext());
         });
     }

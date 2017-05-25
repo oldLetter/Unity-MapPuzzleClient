@@ -101,6 +101,7 @@
     <Compile Include="Assets\Foundation\Net\Coder.cs" />
     <Compile Include="Assets\Foundation\Net\DataAssign.cs" />
     <Compile Include="Assets\Foundation\Net\HttpClient.cs" />
+    <Compile Include="Assets\Foundation\Net\HttpCore.cs" />
     <Compile Include="Assets\Foundation\SimpleJSON.cs" />
     <Compile Include="Assets\Foundation\Singleton.cs" />
     <Compile Include="Assets\Foundation\Timer.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Assets\Foundation\UIBase\BaseContext.cs" />
     <Compile Include="Assets\Foundation\UIBase\BaseView.cs" />
     <Compile Include="Assets\Foundation\UIBase\ContextManager.cs" />
+    <Compile Include="Assets\Foundation\UIBase\RepeatPressEventTrigger.cs" />
     <Compile Include="Assets\Foundation\UIBase\UIManager.cs" />
     <Compile Include="Assets\Foundation\UIBase\UIType.cs" />
     <Compile Include="Assets\Foundation\UIComponent\GridScroller.cs" />
@@ -132,6 +134,7 @@
     <None Include="Assets\Resources\Localization\Chinese.json.txt" />
     <None Include="Assets\Resources\XMLData\Australia.xml" />
     <None Include="Assets\Resources\XMLData\ChinaPieceLocation.xml" />
+    <None Include="Assets\Resources\XMLData\LevelDetail.xml" />
     <None Include="Assets\Resources\XMLData\PaperList.xml" />
     <None Include="Assets\Resources\XMLData\SouthAmerica.xml" />
     <None Include="Assets\Resources\XMLData\china.xml" />
